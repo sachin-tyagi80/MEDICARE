@@ -6,7 +6,9 @@ import { pageStyles, statusClasses, keyframesStyles } from "../../assets/dummySt
 /* ----------------------
   Config
 ------------------------ */
-const API_BASE = "http://localhost:4000";
+const API_BASE =
+  import.meta.env.VITE_BACKEND_URL ||
+  "https://medicare-4bvy.onrender.com";
 
 /* ----------------------
   Helpers
