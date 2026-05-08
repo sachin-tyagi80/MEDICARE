@@ -1,10 +1,25 @@
+// import mongoose from "mongoose";
+
+// export const connectDB = async ()=> {
+//   await mongoose.connect("mongodb+srv://sachintyagi6322_db_user:k5iEzZl12cdJhCes@cluster0.9rmat5x.mongodb.net/MediCare")
+//   .then(() => {console.log("DB connected")})
+// }
+
+
 import mongoose from "mongoose";
 
-export const connectDB = async ()=> {
-  await mongoose.connect("mongodb+srv://sachintyagi6322_db_user:k5iEzZl12cdJhCes@cluster0.9rmat5x.mongodb.net/MediCare")
-  .then(() => {console.log("DB connected")})
-}
+export const connectDB = async () => {
+  try {
+    await mongoose.connect(
+      "mongodb+srv://sachintyagi6322_db_user:k5iEzZl12cdJhCes@cluster0.9rmat5x.mongodb.net/MediCare"
+    );
 
+    console.log("✅ DB connected successfully");
+  } catch (error) {
+    console.error("❌ DB connection failed:", error.message);
+    process.exit(1);
+  }
+};
 
 // ✨ Step-by-step Instructions (Follow Step 1, then Step 2, then Step 3, …)
 
