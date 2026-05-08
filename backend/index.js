@@ -17,6 +17,7 @@ const port = process.env.PORT || 4000;
 const allowedOrigins = [
   "http://localhost:5173", // user frontend
   "http://localhost:5174", // admin dashboard
+  "https://medicare-1-lid2.onrender.com",
 ];
 
 app.use(
