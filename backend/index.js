@@ -22,19 +22,28 @@ const allowedOrigins = [
   "https://medicare-4bvy.onrender.com",  // backend
 ];
 
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       // allow server-to-server & tools like Postman (no origin)
+//       if (!origin) return callback(null, true);
+
+//       if (allowedOrigins.includes(origin)) {
+//         return callback(null, true);
+//       }
+
+//       return callback(new Error("Not allowed by CORS"));
+//     },
+
+//     credentials: true, // ✅ REQUIRED for cookies / Clerk
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//   })
+//);
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // allow server-to-server & tools like Postman (no origin)
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(new Error("Not allowed by CORS"));
-    },
-    credentials: true, // ✅ REQUIRED for cookies / Clerk
+    origin: true, // allow all origins (for testing)
+    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
