@@ -16,7 +16,7 @@ import { addServiceStyles } from "../../assets/dummyStyles";
 
 export default function AddService({ apiBase, serviceId }) {
   //const API_BASE = apiBase || "http://localhost:4000";
-  const API_BASE = apiBase || "medicare-4bvy.onrender.com";
+  const API_BASE = apiBase || "https://medicare-4bvy.onrender.com";
   
 
   const fileRef = useRef(null);
